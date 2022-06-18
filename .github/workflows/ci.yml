@@ -18,12 +18,12 @@ jobs:
       - uses: mirromutth/mysql-action@v1.1
         with:
           host port: 3306
-          container port: 3308 # Optional, default value is 3306. The port of container
+          container port: 3306 # Optional, default value is 3306. The port of container
           mysql database: 'simple_bank' # Optional, default value is "test". The specified database which will be create
           mysql root password: 1234567
           mysql user: root 
           mysql password: 1234567
-          ports: -3308:3306
+          
       - uses: actions/checkout@v3
 
       - name: Set up Go
@@ -39,6 +39,6 @@ jobs:
       - name: which
         run: which migrate
       - name: run migrations
-        run: migrate -path db/migration -database "mysql://root:1234567@tcp(localhost:3308)/simple_bank" -verbose up
+        run: migrate -path db/migration -database "mysql://root:1234567@tcp(localhost:3306)/simple_bank" -verbose up
       - name: Test
         run: go test -v ./...
