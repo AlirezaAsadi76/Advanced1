@@ -16,7 +16,7 @@ jobs:
         image: mysql:latest
         env:
           MYSQL_USER: root
-          # MYSQL_PASSWORD: 
+          MYSQL_PASSWORD: 123456
           MYSQL_DATABASE: simpale_bank
           MYSQL_ROOT_PASSWORD: 1234567
         ports:
