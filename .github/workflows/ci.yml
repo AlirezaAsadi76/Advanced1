@@ -34,12 +34,9 @@ jobs:
         run:  curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey
       - name: "migrate"
      
-        run:  echo "deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/migrate.list
+        run: sudo echo "deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/migrate.list
       - name: "migrate"
-        run:  curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey
-      - name: "migrate"
-        run:  curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey
-      - name: migrate 3
+  
         run:  sudo apt-get update
       - name: migrate 4
         run: sudo apt-get install -y migrate
