@@ -31,6 +31,8 @@ jobs:
           go-version: 1.18
       - name: install migrate
         run: curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-amd64.tar.gz | tar xvz
+      - name: ls
+        run: ls -l
       - name: move migrate
         run:  sudo mv migrate.linux-amd64 /usr/bin/migrate
       - name: which
