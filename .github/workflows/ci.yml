@@ -30,9 +30,8 @@ jobs:
         with:
           go-version: 1.18
       - name: "migrate"
-        run:  curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey | apt-key add -
-      - name: migrate 2
-        run:  echo "deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/migrate.list
+        run:  curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey | apt-key add - echo "deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/migrate.list
+
       - name: migrate 3
         run:  apt-get update
       - name: migrate 4
