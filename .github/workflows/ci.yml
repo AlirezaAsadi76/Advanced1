@@ -38,6 +38,6 @@ jobs:
       - name: which
         run: which migrate
       - name: run migrations
-        run: migrate -path db/migration -database "mysql://root:1234567@tcp(localhost:3308)/simple_bank" -verbose up
+        run: migrate -path db/migration -database "mysql://root:1234567@tcp(localhost:3306)/simple_bank" -verbose up
       - name: Test
         run: go test -v ./...
