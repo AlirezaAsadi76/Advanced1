@@ -30,9 +30,9 @@ jobs:
         with:
           go-version: 1.18
       - name: migrate 3
-        run:  apt-get update
+        run:  sudo apt-get update
       - name: migrate 4
-        run:  apt-get install -y migrate
+        run:  sudo apt-get install -y migrate
                
       - name: run migrations
         run: migrate -path db/migration -database "mysql://root:1234567@tcp(localhost:3308)/simple_bank" -verbose up
