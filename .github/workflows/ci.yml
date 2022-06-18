@@ -23,6 +23,7 @@ jobs:
           mysql root password: 1234567
           mysql user: root 
           mysql password: 1234567
+          ports: -3308:3306
       - uses: actions/checkout@v3
 
       - name: Set up Go
